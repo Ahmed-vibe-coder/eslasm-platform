@@ -1,0 +1,83 @@
+---
+description: Coding standards and patterns for EduForge
+globs: **/*.ts,**/*.tsx
+alwaysApply: true
+---
+
+# Coding Standards
+
+## TypeScript
+- **Strict mode is ON**. Never use `any`. Use `unknown` and narrow it.
+- Prefer `interface` for objects, `type` for unions and computed types.
+- Always type function return values explicitly on exported functions.
+- Use `satisfies` operator instead of casting with `as` when possible.
+
+## React & Next.js
+- **Server Components are the default**. Add `'use client'` only when you need hooks, event handlers, or browser APIs.
+- Never use `useEffect` to fetch data. Use TanStack Query on the client, or Server Components with `fetch` on the server.
+- All forms use `react-hook-form` + `zod` schemas. Never use uncontrolled inputs.
+- Page components are always the default export. Named exports are for metadata and generateStaticParams only.
+
+## File naming
+- Files: `kebab-case.tsx`
+- Components: `PascalCase`
+- Hooks: `use-hook-name.ts` (file) → `useHookName` (export)
+- Types: `PascalCase`
+- Constants: `SCREAMING_SNAKE_CASE`
+- Utilities: `camelCase`
+
+## Component structure (always in this order)
+1. Imports
+2. Types/interfaces local to this file
+3. Constants
+4. The component function
+5. Subcomponents (if small and only used here)
+6. Helper functions used only in this file
+
+## API calls
+- NEVER call the backend URL directly from a component.
+- ALWAYS use functions from `@eduforge/api-client`.
+- ALWAYS wrap API calls in TanStack Query (`useQuery`, `useMutation`).
+- ALWAYS handle loading and error states.
+
+## Styling
+- Use Tailwind classes. No inline styles except for dynamic values.
+- Use `cn()` from `@/lib/utils` to merge conditional classes.
+- Use CSS variables for theme values (defined in `globals.css`).
+- Mobile-first: write base styles for mobile, add `md:` and `lg:` for larger screens.
+
+## State management
+- **Server state** (API data): TanStack Query
+- **Global UI state** (sidebar open, modals): Zustand stores in `src/store/`
+- **Local component state**: `useState` / `useReducer`
+- **Form state**: `react-hook-form`
+- Never put server data into Zustand.
+
+## Internationalization (i18n)
+- **Every user-visible string MUST use translation keys.** Never hardcode UI text.
+- Library: `next-intl` (cookie-based locale, no URL prefix).
+- Server Components: use `const t = await getTranslations('namespace')` from `next-intl/server`.
+- Client Components: use `const t = useTranslations('namespace')` from `next-intl`.
+- Translation files live in `apps/web/messages/{locale}.json`.
+- Use ICU message format for interpolation: `t('greeting', { name })`.
+- When adding a new string, add keys to ALL locale files (`en.json`, `ar.json`, etc.).
+- Locale config: `src/i18n/config.ts`. Request config: `src/i18n/request.ts`.
+- RTL locales (e.g. Arabic) are auto-detected — the `<html dir>` attribute is set dynamically.
+
+## Dark mode
+- Uses `next-themes` with `attribute="class"` strategy.
+- CSS variables for light/dark are in `globals.css`.
+- Always test both light and dark themes when building UI.
+- Use `ThemeToggle` component from `@/components/ui/theme-toggle`.
+
+## RTL & Responsive
+- Use logical CSS properties for RTL support: `ps-*`/`pe-*` (not `pl-*`/`pr-*`), `ms-*`/`me-*` (not `ml-*`/`mr-*`), `border-s`/`border-e` (not `border-l`/`border-r`), `start-*`/`end-*` (not `left-*`/`right-*`).
+- Mobile-first: base styles for small screens, add `sm:`, `md:`, `lg:` breakpoints for larger screens.
+- All layouts must be functional at 320px width minimum.
+- Tables/grids use `overflow-x-auto` with `min-w-[...]` for horizontal scroll on small screens.
+
+## Error handling
+- API routes must always return typed responses: `{ data, success, message }`.
+- Use Next.js `error.tsx` for route-level errors.
+- Use try/catch in server actions and API routes.
+- Log errors server-side. Never log sensitive data.

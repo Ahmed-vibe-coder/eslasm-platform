@@ -1,0 +1,201 @@
+{
+  "common": {
+    "appName": "إديوفورج",
+    "signIn": "تسجيل الدخول",
+    "signUp": "ابدأ الآن",
+    "pricing": "الأسعار",
+    "templates": "القوالب",
+    "goHome": "الرجوع للرئيسية",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "delete": "حذف",
+    "edit": "تعديل",
+    "create": "إنشاء",
+    "publish": "نشر",
+    "saveDraft": "حفظ كمسودة",
+    "loading": "جاري التحميل...",
+    "noData": "لا توجد بيانات",
+    "darkMode": "الوضع الداكن",
+    "lightMode": "الوضع الفاتح",
+    "systemTheme": "النظام",
+    "language": "اللغة",
+    "notifications": "الإشعارات",
+    "toggleSidebar": "تبديل القائمة الجانبية"
+  },
+  "nav": {
+    "overview": "نظرة عامة",
+    "myAgencies": "أكاديمياتي",
+    "templates": "القوالب",
+    "billing": "الفواتير",
+    "settings": "الإعدادات"
+  },
+  "footer": {
+    "tagline": "أنشئ وأطلق منصة التعلم الإلكتروني الخاصة بك في دقائق.",
+    "product": "المنتج",
+    "company": "الشركة",
+    "legal": "قانوني",
+    "about": "عن الشركة",
+    "contact": "اتصل بنا",
+    "privacy": "الخصوصية",
+    "terms": "الشروط",
+    "copyright": "© {year} إديوفورج. جميع الحقوق محفوظة."
+  },
+  "errors": {
+    "notFound": "404",
+    "pageNotFound": "الصفحة غير موجودة",
+    "pageNotFoundDescription": "الصفحة التي تبحث عنها غير موجودة."
+  },
+  "marketing": {
+    "hero": {
+      "title": "ابنِ منصتك التعليمية",
+      "subtitle": "أطلق أكاديمية تعليمية متكاملة بعلامتك التجارية في دقائق، وليس أشهر."
+    },
+    "pricing": {
+      "title": "أسعار بسيطة وشفافة"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "مرحباً بعودتك",
+      "subtitle": "سجل الدخول إلى حسابك في إديوفورج"
+    },
+    "register": {
+      "title": "أنشئ حسابك",
+      "subtitle": "ابدأ ببناء منصتك التعليمية اليوم"
+    }
+  },
+  "dashboard": {
+    "welcome": "مرحباً بك في لوحة تحكم إديوفورج",
+    "agencies": {
+      "title": "أكاديمياتي",
+      "subtitle": "إدارة منصات التعلم الخاصة بك"
+    },
+    "createAgency": {
+      "title": "إنشاء أكاديمية",
+      "subtitle": "إعداد منصة تعلم إلكتروني جديدة"
+    },
+    "agencyDetail": {
+      "title": "تفاصيل الأكاديمية",
+      "managing": "إدارة الأكاديمية {id}"
+    },
+    "templates": {
+      "title": "القوالب",
+      "subtitle": "تصفح وتطبيق قوالب المواقع على أكاديمياتك"
+    },
+    "billing": {
+      "title": "الفواتير",
+      "subtitle": "إدارة اشتراكك وطرق الدفع"
+    },
+    "settings": {
+      "title": "الإعدادات",
+      "subtitle": "إدارة حسابك وتفضيلاتك"
+    },
+    "customDomain": {
+      "title": "نطاق مخصص",
+      "subtitle": "ربط نطاق مخصص بأكاديميتك"
+    }
+  },
+  "admin": {
+    "panelTitle": "لوحة تحكم المدير",
+    "overview": {
+      "title": "نظرة عامة على المنصة",
+      "subtitle": "راقب منصتك بالكامل"
+    },
+    "stats": {
+      "totalTenants": "إجمالي المستأجرين",
+      "activeUsers": "المستخدمون النشطون",
+      "totalCourses": "إجمالي الدورات",
+      "revenue": "الإيرادات",
+      "monthlySignups": "التسجيلات الشهرية",
+      "monthlyRevenue": "الإيرادات الشهرية",
+      "churnRate": "معدل المغادرة",
+      "activeAgencies": "الأكاديميات النشطة",
+      "totalEnrollments": "إجمالي التسجيلات",
+      "avgCourseRating": "متوسط تقييم الدورات"
+    },
+    "tenants": {
+      "title": "جميع المستأجرين",
+      "subtitle": "عرض وإدارة جميع الأكاديميات على المنصة",
+      "columns": {
+        "name": "الاسم",
+        "subdomain": "النطاق الفرعي",
+        "plan": "الخطة",
+        "status": "الحالة",
+        "created": "تاريخ الإنشاء"
+      },
+      "empty": "لا يوجد مستأجرون بعد."
+    },
+    "templates": {
+      "title": "إدارة القوالب",
+      "subtitle": "إنشاء وإدارة قوالب المواقع للأكاديميات",
+      "upload": "رفع قالب جديد"
+    },
+    "plans": {
+      "title": "خطط الأسعار",
+      "subtitle": "إعداد الخطط المتاحة للأكاديميات",
+      "tiers": {
+        "starter": "المبتدئ",
+        "pro": "الاحترافي",
+        "enterprise": "المؤسسات"
+      },
+      "configure": "إعداد خطة {tier}"
+    },
+    "users": {
+      "title": "جميع المستخدمين",
+      "subtitle": "عرض جميع المستخدمين عبر جميع المستأجرين",
+      "columns": {
+        "name": "الاسم",
+        "email": "البريد الإلكتروني",
+        "role": "الدور",
+        "tenant": "المستأجر",
+        "joined": "تاريخ الانضمام"
+      },
+      "empty": "لا يوجد مستخدمون بعد."
+    },
+    "analytics": {
+      "title": "تحليلات المنصة",
+      "subtitle": "المقاييس الرئيسية للمنصة بالكامل"
+    },
+    "navItems": {
+      "overview": "نظرة عامة",
+      "tenants": "المستأجرون",
+      "templates": "القوالب",
+      "plans": "الخطط",
+      "users": "المستخدمون",
+      "analytics": "التحليلات"
+    }
+  },
+  "builder": {
+    "pagesTitle": "الصفحات — أكاديمية {agencyId}",
+    "newPage": "صفحة جديدة",
+    "selectPage": "اختر صفحة للتعديل أو أنشئ صفحة جديدة.",
+    "pageEditor": "محرر الصفحات"
+  },
+  "tenant": {
+    "welcome": "مرحباً بك في {name}",
+    "tagline": "وجهتك للتعلم الإلكتروني",
+    "courses": {
+      "title": "الدورات",
+      "browse": "تصفح جميع الدورات المتاحة في {name}",
+      "empty": "لا توجد دورات متاحة بعد.",
+      "detail": "تفاصيل الدورة",
+      "courseId": "رقم الدورة: {id}"
+    },
+    "login": {
+      "title": "{name}",
+      "subtitle": "سجل الدخول إلى حسابك"
+    },
+    "register": {
+      "title": "انضم إلى {name}",
+      "subtitle": "أنشئ حساب طالب"
+    },
+    "dashboard": {
+      "title": "لوحة تحكم الطالب",
+      "subtitle": "تقدمك التعليمي في {name}",
+      "enrolledCourses": "الدورات المسجلة",
+      "completed": "المكتملة",
+      "certificates": "الشهادات"
+    },
+    "page": "الصفحة: /{path}"
+  }
+}

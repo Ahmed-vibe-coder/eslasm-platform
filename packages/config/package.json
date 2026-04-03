@@ -1,0 +1,9 @@
+{
+  "name": "@eduforge/config",
+  "version": "0.0.1",
+  "exports": {
+    "./tailwind": "./tailwind.config.ts",
+    "./typescript": "./tsconfig.base.json",
+    "./eslint": "./eslint-base.js"
+  }
+}

@@ -1,0 +1,39 @@
+---
+description: Rules for the Drag & Drop Builder feature
+globs: **/builder/**,**/builder-core/**
+alwaysApply: false
+---
+
+# Builder Rules (GrapesJS)
+
+## How the builder works
+1. User opens the editor at `/(builder)/[agencyId]/editor/[pageId]`
+2. GrapesJS loads with a custom config from `packages/builder-core`
+3. User edits the page visually
+4. On save: GrapesJS exports JSON → sent to API → stored in DB
+5. On publish: the JSON is rendered into the `[tenant]/[...slug]` route
+
+## State flow
+- Builder state lives in `src/store/builder-store.ts` (Zustand)
+- GrapesJS changes trigger `setStructure()` which sets `isDirty: true`
+- Save button reads `useBuilderStore` and calls `builderApi.savePage()`
+
+## Custom blocks (in `packages/builder-core/src/blocks/`)
+Each block file exports a function that takes the `editor` instance and calls `editor.BlockManager.add()`.
+Every block must have:
+- A `label` for the UI
+- A `category` ('Sections', 'LMS', 'Components', 'Layout')
+- A `content` object with real default content (no empty blocks)
+
+## LMS blocks (special)
+Blocks like `courses-grid`, `trainer-card`, `student-testimonials` are dynamic.
+They use `data-component` attributes that the renderer replaces with real data at runtime.
+
+## Rendering saved pages
+The file `packages/builder-core/src/renderer/json-to-html.ts` converts stored JSON to HTML.
+This is used in `apps/web/src/app/[tenant]/[...slug]/page.tsx` to render builder pages.
+
+## DO NOT
+- Load GrapesJS in a Server Component (it's browser-only — always `'use client'`)
+- Store the entire GrapesJS editor instance in React state
+- Mutate GrapesJS state directly from outside the editor component

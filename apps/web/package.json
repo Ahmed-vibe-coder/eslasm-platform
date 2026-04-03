@@ -1,0 +1,40 @@
+{
+  "name": "@eduforge/web",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@eduforge/api-client": "workspace:*",
+    "@eduforge/builder-core": "workspace:*",
+    "@eduforge/types": "workspace:*",
+    "@hookform/resolvers": "^3.0.0",
+    "@tanstack/react-query": "^5.0.0",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
+    "grapesjs": "^0.21.0",
+    "lucide-react": "^0.400.0",
+    "next": "15.0.0",
+    "next-auth": "5.0.0-beta.25",
+    "next-intl": "^4.9.0",
+    "next-themes": "^0.4.6",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "react-hook-form": "^7.0.0",
+    "tailwind-merge": "^2.0.0",
+    "zod": "^3.0.0",
+    "zustand": "^5.0.0"
+  },
+  "devDependencies": {
+    "@eduforge/config": "workspace:*",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

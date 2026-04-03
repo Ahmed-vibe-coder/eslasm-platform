@@ -1,0 +1,49 @@
+---
+description: File structure rules and conventions
+globs: **/*.ts,**/*.tsx
+alwaysApply: true
+---
+
+# File Structure Rules
+
+## Route groups
+- `(marketing)/` — Public pages. No auth required. Uses site header + footer layout.
+- `(auth)/` — Auth pages. Centered layout. No sidebar.
+- `(dashboard)/` — Agency owner workspace. Requires auth. Has sidebar.
+- `(builder)/` — Fullscreen GrapesJS editor. No nav, no sidebar.
+- `(admin)/` — Super admin only. Separate sidebar with admin nav.
+- `[tenant]/` — Dynamic. Served to agency's subdomain. Completely separate UI.
+
+## Feature folder pattern (ALWAYS follow this)
+When adding a new feature under a route group:
+```
+feature-name/
+├── page.tsx              ← Server component, data fetching here
+├── loading.tsx           ← Suspense fallback (skeleton UI)
+├── error.tsx             ← Error boundary ('use client')
+├── _components/          ← Components used ONLY by this feature
+│   ├── feature-form.tsx
+│   └── feature-card.tsx
+├── _hooks/               ← Custom hooks for this feature
+│   └── use-feature.ts
+└── [id]/                 ← Sub-routes if needed
+    └── page.tsx
+```
+
+## When to put a component where
+- Used in ONE feature only → `feature/_components/`
+- Used in MULTIPLE features in the same app → `src/components/`
+- Used in MULTIPLE apps (future) → `packages/ui/`
+
+## Naming conventions
+- Feature folders: `kebab-case`
+- Private folders: `_prefix` (prevents Next.js from treating as routes)
+- Route groups: `(group-name)` (invisible in URL)
+- Dynamic routes: `[param]` or `[...slug]` for catch-all
+
+## Server vs Client components
+- `page.tsx` files → always Server Components
+- `layout.tsx` files → always Server Components (unless need context)
+- `_components/` files → Server Components unless they have interactivity
+- `_hooks/` files → always `'use client'`
+- `store/` files → always `'use client'`

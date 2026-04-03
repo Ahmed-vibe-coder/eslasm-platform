@@ -1,0 +1,201 @@
+{
+  "common": {
+    "appName": "EduForge",
+    "signIn": "Sign In",
+    "signUp": "Get Started",
+    "pricing": "Pricing",
+    "templates": "Templates",
+    "goHome": "Go home",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "create": "Create",
+    "publish": "Publish",
+    "saveDraft": "Save Draft",
+    "loading": "Loading...",
+    "noData": "No data available",
+    "darkMode": "Dark mode",
+    "lightMode": "Light mode",
+    "systemTheme": "System",
+    "language": "Language",
+    "notifications": "Notifications",
+    "toggleSidebar": "Toggle sidebar"
+  },
+  "nav": {
+    "overview": "Overview",
+    "myAgencies": "My Agencies",
+    "templates": "Templates",
+    "billing": "Billing",
+    "settings": "Settings"
+  },
+  "footer": {
+    "tagline": "Build and launch your online learning platform in minutes.",
+    "product": "Product",
+    "company": "Company",
+    "legal": "Legal",
+    "about": "About",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "copyright": "© {year} EduForge. All rights reserved."
+  },
+  "errors": {
+    "notFound": "404",
+    "pageNotFound": "Page not found",
+    "pageNotFoundDescription": "The page you're looking for doesn't exist."
+  },
+  "marketing": {
+    "hero": {
+      "title": "Build Your Learning Platform",
+      "subtitle": "Launch a fully branded online academy in minutes, not months."
+    },
+    "pricing": {
+      "title": "Simple, Transparent Pricing"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Welcome back",
+      "subtitle": "Sign in to your EduForge account"
+    },
+    "register": {
+      "title": "Create your account",
+      "subtitle": "Start building your learning platform today"
+    }
+  },
+  "dashboard": {
+    "welcome": "Welcome to your EduForge dashboard",
+    "agencies": {
+      "title": "My Agencies",
+      "subtitle": "Manage your learning platforms"
+    },
+    "createAgency": {
+      "title": "Create Agency",
+      "subtitle": "Set up a new online learning platform"
+    },
+    "agencyDetail": {
+      "title": "Agency Details",
+      "managing": "Managing agency {id}"
+    },
+    "templates": {
+      "title": "Templates",
+      "subtitle": "Browse and apply website templates to your agencies"
+    },
+    "billing": {
+      "title": "Billing",
+      "subtitle": "Manage your subscription and payment methods"
+    },
+    "settings": {
+      "title": "Settings",
+      "subtitle": "Manage your account and preferences"
+    },
+    "customDomain": {
+      "title": "Custom Domain",
+      "subtitle": "Connect a custom domain to your agency"
+    }
+  },
+  "admin": {
+    "panelTitle": "Super Admin Panel",
+    "overview": {
+      "title": "Platform Overview",
+      "subtitle": "Monitor your entire SaaS platform"
+    },
+    "stats": {
+      "totalTenants": "Total Tenants",
+      "activeUsers": "Active Users",
+      "totalCourses": "Total Courses",
+      "revenue": "Revenue",
+      "monthlySignups": "Monthly Signups",
+      "monthlyRevenue": "Monthly Revenue",
+      "churnRate": "Churn Rate",
+      "activeAgencies": "Active Agencies",
+      "totalEnrollments": "Total Enrollments",
+      "avgCourseRating": "Avg. Course Rating"
+    },
+    "tenants": {
+      "title": "All Tenants",
+      "subtitle": "View and manage all agencies on the platform",
+      "columns": {
+        "name": "Name",
+        "subdomain": "Subdomain",
+        "plan": "Plan",
+        "status": "Status",
+        "created": "Created"
+      },
+      "empty": "No tenants yet."
+    },
+    "templates": {
+      "title": "Manage Templates",
+      "subtitle": "Create and manage website templates for agencies",
+      "upload": "Upload a new template"
+    },
+    "plans": {
+      "title": "Pricing Plans",
+      "subtitle": "Configure the plans available to agencies",
+      "tiers": {
+        "starter": "Starter",
+        "pro": "Pro",
+        "enterprise": "Enterprise"
+      },
+      "configure": "Configure the {tier} tier"
+    },
+    "users": {
+      "title": "All Users",
+      "subtitle": "View every user across all tenants",
+      "columns": {
+        "name": "Name",
+        "email": "Email",
+        "role": "Role",
+        "tenant": "Tenant",
+        "joined": "Joined"
+      },
+      "empty": "No users yet."
+    },
+    "analytics": {
+      "title": "Platform Analytics",
+      "subtitle": "Key metrics for the entire platform"
+    },
+    "navItems": {
+      "overview": "Overview",
+      "tenants": "Tenants",
+      "templates": "Templates",
+      "plans": "Plans",
+      "users": "Users",
+      "analytics": "Analytics"
+    }
+  },
+  "builder": {
+    "pagesTitle": "Pages — Agency {agencyId}",
+    "newPage": "New Page",
+    "selectPage": "Select a page to edit or create a new one.",
+    "pageEditor": "Page Editor"
+  },
+  "tenant": {
+    "welcome": "Welcome to {name}",
+    "tagline": "Your online learning destination",
+    "courses": {
+      "title": "Courses",
+      "browse": "Browse all courses available at {name}",
+      "empty": "No courses available yet.",
+      "detail": "Course Details",
+      "courseId": "Course ID: {id}"
+    },
+    "login": {
+      "title": "{name}",
+      "subtitle": "Sign in to your account"
+    },
+    "register": {
+      "title": "Join {name}",
+      "subtitle": "Create a student account"
+    },
+    "dashboard": {
+      "title": "Student Dashboard",
+      "subtitle": "Your learning progress at {name}",
+      "enrolledCourses": "Enrolled Courses",
+      "completed": "Completed",
+      "certificates": "Certificates"
+    },
+    "page": "Page: /{path}"
+  }
+}

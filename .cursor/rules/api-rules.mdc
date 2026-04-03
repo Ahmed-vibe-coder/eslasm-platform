@@ -1,0 +1,55 @@
+---
+description: API and data fetching rules
+globs: **/api/**,**/api-client/**,**/_hooks/**
+alwaysApply: false
+---
+
+# API Rules
+
+## The proxy pattern
+All frontend API calls go through Next.js API routes at `/api/proxy/[...path]`.
+This proxy forwards requests to the real backend and injects the auth token server-side.
+
+**Frontend component → `@eduforge/api-client` → `/api/proxy/...` → Real Backend**
+
+Never call the backend URL directly from client components. The backend URL is only ever read in `apps/web/src/app/api/proxy/[...path]/route.ts`.
+
+## TanStack Query patterns
+
+### Queries (reading data)
+```typescript
+// In _hooks/use-courses.ts
+export function useCourses(tenantId: string) {
+  return useQuery({
+    queryKey: ['courses', tenantId],
+    queryFn: () => coursesApi.list(tenantId),
+    enabled: !!tenantId,
+  })
+}
+```
+
+### Mutations (writing data)
+```typescript
+export function useCreateCourse() {
+  const queryClient = useQueryClient()
+  return useMutation({
+    mutationFn: coursesApi.create,
+    onSuccess: (_, variables) => {
+      void queryClient.invalidateQueries({ queryKey: ['courses', variables.tenantId] })
+    },
+  })
+}
+```
+
+## Query keys convention
+Always use arrays. Structure: `[resource, id?, filter?]`
+- `['courses', tenantId]`
+- `['course', courseId]`
+- `['agencies']`
+- `['agency', agencyId]`
+- `['builder-page', pageId]`
+
+## Server-side data fetching
+In Server Components, call `@eduforge/api-client` functions directly.
+Pass the auth token from the session.
+Never use `useQuery` in Server Components.

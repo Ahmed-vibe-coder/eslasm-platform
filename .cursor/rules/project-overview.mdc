@@ -1,0 +1,32 @@
+---
+description: EduForge platform overview and architecture
+globs: **/*.ts,**/*.tsx
+alwaysApply: true
+---
+
+# EduForge — SaaS LMS Platform Builder
+
+## What is EduForge?
+EduForge is a multi-tenant SaaS platform that lets users build and launch their own online learning platforms (called "Agencies"). Think Teachable + Webflow combined.
+
+## Architecture in one sentence
+A Next.js 15 monorepo where `middleware.ts` routes subdomains to tenant pages, and GrapesJS powers the drag-and-drop page builder.
+
+## User types
+- **Super Admin** — manages the entire platform (templates, plans, all tenants)
+- **Agency Owner** — creates and manages their learning platform (the tenant)
+- **Trainer** — creates courses within an agency
+- **Student** — enrolls in and consumes courses
+
+## Key URLs
+- `app.eduforge.com/dashboard` — Agency Owner dashboard
+- `app.eduforge.com/builder/[agencyId]` — Drag & Drop builder
+- `ahmed-academy.eduforge.com` — Public-facing agency site
+- `app.eduforge.com/admin` — Super Admin panel
+
+## Monorepo structure
+- `apps/web/` — The Next.js 15 application (everything is here)
+- `packages/types/` — Shared TypeScript interfaces
+- `packages/api-client/` — All API calls (never call the backend directly from components)
+- `packages/builder-core/` — GrapesJS configuration and custom blocks
+- `packages/config/` — Shared ESLint, TypeScript, Tailwind configs
