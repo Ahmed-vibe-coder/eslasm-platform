@@ -2,7 +2,7 @@
 
 A multi-tenant platform for building and launching online learning academies.
 
-## Quick Start
+## Quick Start 
 
 ### Prerequisites
 - Node.js >= 20
