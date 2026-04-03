@@ -7,7 +7,7 @@ alwaysApply: false
 # Builder Rules (GrapesJS)
 
 ## How the builder works
-1. User opens the editor at `/(builder)/[agencyId]/editor/[pageId]`
+1. User opens the editor at `/builder/[agencyId]/editor/[pageId]` (route group `(builder)` is invisible in the URL)
 2. GrapesJS loads with a custom config from `packages/builder-core`
 3. User edits the page visually
 4. On save: GrapesJS exports JSON → sent to API → stored in DB

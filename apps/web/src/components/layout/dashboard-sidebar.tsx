@@ -15,11 +15,11 @@ const navIcons: Record<string, string> = {
 
 const navKeys = ['overview', 'myAgencies', 'templates', 'billing', 'settings'] as const
 const navHrefs: Record<string, string> = {
-  overview: '/',
-  myAgencies: '/agencies',
-  templates: '/templates',
-  billing: '/billing',
-  settings: '/settings',
+  overview: '/dashboard',
+  myAgencies: '/dashboard/agencies',
+  templates: '/dashboard/templates',
+  billing: '/dashboard/billing',
+  settings: '/dashboard/settings',
 }
 
 export function DashboardSidebar() {
@@ -29,7 +29,7 @@ export function DashboardSidebar() {
   return (
     <aside className="hidden w-64 shrink-0 border-e bg-background lg:block">
       <div className="flex h-16 items-center border-b px-6">
-        <Link href="/" className="text-lg font-bold tracking-tight">
+        <Link href="/dashboard" className="text-lg font-bold tracking-tight">
           EduForge
         </Link>
       </div>
@@ -37,13 +37,17 @@ export function DashboardSidebar() {
         {navKeys.map((key) => {
           const href = navHrefs[key]!
           const icon = navIcons[key]!
+          const isActive =
+            href === '/dashboard'
+              ? pathname === '/dashboard'
+              : pathname === href || pathname.startsWith(`${href}/`)
           return (
             <Link
               key={key}
               href={href}
               className={cn(
                 'flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors',
-                pathname === href
+                isActive
                   ? 'bg-primary/10 text-primary'
                   : 'text-muted-foreground hover:bg-secondary hover:text-foreground',
               )}

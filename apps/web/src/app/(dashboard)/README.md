@@ -4,25 +4,23 @@
 The main workspace for agency owners. This is where they manage their learning platforms (agencies), view analytics, manage billing, and access the builder.
 
 ## Role
-Protected area requiring authentication. Uses a sidebar + header layout. Agency owners spend most of their time here.
+Protected area requiring authentication. Uses a sidebar + header layout. Route group `(dashboard)` does **not** appear in the URL — pages live under the real folder `dashboard/` so URLs are `/dashboard/...` (not `/`).
 
 ## URL Mapping
 | Folder | URL | Page |
 |---|---|---|
-| `page.tsx` | `/` | Dashboard overview with key metrics |
-| `agencies/` | `/agencies` | List of owned agencies |
-| `agencies/new/` | `/agencies/new` | Create new agency form |
-| `agencies/[id]/` | `/agencies/:id` | Single agency detail/management |
-| `templates/` | `/templates` | Browse website templates |
-| `billing/` | `/billing` | Subscription and payment management |
-| `settings/` | `/settings` | Account settings |
-| `settings/domain/` | `/settings/domain` | Custom domain configuration |
+| `dashboard/page.tsx` | `/dashboard` | Dashboard overview with key metrics |
+| `dashboard/agencies/` | `/dashboard/agencies` | List of owned agencies |
+| `dashboard/agencies/new/` | `/dashboard/agencies/new` | Create new agency form |
+| `dashboard/agencies/[id]/` | `/dashboard/agencies/:id` | Single agency detail/management |
+| `dashboard/templates/` | `/dashboard/templates` | Browse website templates |
+| `dashboard/billing/` | `/dashboard/billing` | Subscription and payment management |
+| `dashboard/settings/` | `/dashboard/settings` | Account settings |
+| `dashboard/settings/domain/` | `/dashboard/settings/domain` | Custom domain configuration |
+
+## Why `dashboard/` twice?
+Route group `(dashboard)` is invisible. The inner folder `dashboard/` is the real URL prefix so these routes don’t collide with `(marketing)/page.tsx` at `/` or with `(admin)/admin/...` at `/admin/...`.
 
 ## Future Pages
-- `agencies/[id]/courses/page.tsx` → `/agencies/:id/courses` — Courses for this agency
-- `agencies/[id]/students/page.tsx` → `/agencies/:id/students` — Students enrolled
-- `agencies/[id]/trainers/page.tsx` → `/agencies/:id/trainers` — Trainers in this agency
-- `agencies/[id]/analytics/page.tsx` → `/agencies/:id/analytics` — Agency analytics
-- `agencies/[id]/settings/page.tsx` → `/agencies/:id/settings` — Agency-specific settings
-- `notifications/page.tsx` → `/notifications` — Notification center
-- `support/page.tsx` → `/support` — Help and support
+- `dashboard/agencies/[id]/courses/page.tsx` — Courses for this agency
+- `dashboard/notifications/page.tsx` — Notification center

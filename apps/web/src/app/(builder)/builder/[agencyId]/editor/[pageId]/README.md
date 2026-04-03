@@ -1,4 +1,4 @@
-# `(builder)/[agencyId]/editor/[pageId]/` — Page Editor
+# `(builder)/builder/[agencyId]/editor/[pageId]/` — Page Editor
 
 ## Purpose
 The actual GrapesJS visual editor. This is a `'use client'` page that dynamically imports GrapesJS and initializes it.

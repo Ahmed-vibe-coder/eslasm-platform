@@ -14,7 +14,7 @@ export default async function BuilderPagesList({ params }: BuilderPagesListProps
       <header className="flex h-14 items-center justify-between border-b px-4">
         <h1 className="text-base font-semibold sm:text-lg">{t('pagesTitle', { agencyId })}</h1>
         <Link
-          href={`/${agencyId}/editor/new`}
+          href={`/builder/${agencyId}/editor/new`}
           className="rounded-md bg-primary px-3 py-1.5 text-sm font-medium text-primary-foreground hover:opacity-90"
         >
           {t('newPage')}

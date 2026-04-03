@@ -1,4 +1,4 @@
-# `(builder)/[agencyId]/` — Agency Pages List
+# `(builder)/builder/[agencyId]/` — Agency Pages List
 
 ## Purpose
 Lists all pages belonging to an agency, with options to create, edit, duplicate, or delete pages.
@@ -6,8 +6,8 @@ Lists all pages belonging to an agency, with options to create, edit, duplicate,
 ## URL
 `/builder/:agencyId`
 
-## Dynamic Param
-- `agencyId` — The agency whose pages to manage
+## Why `builder/` in the folder path?
+Next.js does not allow two different dynamic segment names at the same URL depth (e.g. `[agencyId]` vs `[tenant]`). The real `/builder/` prefix keeps tenant sites at `/:tenant` and the editor at `/builder/:agencyId`.
 
 ## Future Files
 - `_components/page-list.tsx` — Sortable page list with drag reorder

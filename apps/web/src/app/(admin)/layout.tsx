@@ -32,13 +32,17 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         <nav className="space-y-1 p-4">
           {adminNavKeys.map((key) => {
             const href = adminNavHrefs[key]!
+            const isActive =
+              href === '/admin'
+                ? pathname === '/admin'
+                : pathname === href || pathname.startsWith(`${href}/`)
             return (
               <Link
                 key={key}
                 href={href}
                 className={cn(
                   'block rounded-md px-3 py-2 text-sm font-medium transition-colors',
-                  pathname === href
+                  isActive
                     ? 'bg-primary/10 text-primary'
                     : 'text-muted-foreground hover:bg-secondary hover:text-foreground',
                 )}

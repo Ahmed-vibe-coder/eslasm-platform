@@ -7,10 +7,12 @@ Fullscreen GrapesJS editor where agency owners visually design their website pag
 The core differentiator of EduForge. Lets non-technical users build professional landing pages using drag-and-drop blocks.
 
 ## URL Mapping
+The segment `builder/` is a real URL prefix (not a route group). It avoids colliding with the root `[tenant]` dynamic route.
+
 | Folder | URL | Page |
 |---|---|---|
-| `[agencyId]/` | `/builder/:agencyId` | Pages list for an agency |
-| `[agencyId]/editor/[pageId]/` | `/builder/:agencyId/editor/:pageId` | GrapesJS editor |
+| `builder/[agencyId]/` | `/builder/:agencyId` | Pages list for an agency |
+| `builder/[agencyId]/editor/[pageId]/` | `/builder/:agencyId/editor/:pageId` | GrapesJS editor |
 
 ## Flow
 1. User selects an agency → sees list of pages
@@ -21,10 +23,10 @@ The core differentiator of EduForge. Lets non-technical users build professional
 6. Publish → page rendered on tenant subdomain
 
 ## Future Files
-- `[agencyId]/_components/page-list.tsx` — Sortable list of agency pages
-- `[agencyId]/_components/page-card.tsx` — Page preview card
-- `[agencyId]/editor/[pageId]/_components/editor-toolbar.tsx` — Top toolbar (device preview, undo, redo)
-- `[agencyId]/editor/[pageId]/_components/editor-sidebar.tsx` — Block panels and style manager
-- `[agencyId]/editor/[pageId]/_components/editor-canvas.tsx` — GrapesJS canvas wrapper
-- `[agencyId]/editor/[pageId]/_hooks/use-editor.ts` — Editor initialization and event handling
-- `[agencyId]/editor/[pageId]/_hooks/use-auto-save.ts` — Auto-save with debounce
+- `builder/[agencyId]/_components/page-list.tsx` — Sortable list of agency pages
+- `builder/[agencyId]/_components/page-card.tsx` — Page preview card
+- `builder/[agencyId]/editor/[pageId]/_components/editor-toolbar.tsx` — Top toolbar (device preview, undo, redo)
+- `builder/[agencyId]/editor/[pageId]/_components/editor-sidebar.tsx` — Block panels and style manager
+- `builder/[agencyId]/editor/[pageId]/_components/editor-canvas.tsx` — GrapesJS canvas wrapper
+- `builder/[agencyId]/editor/[pageId]/_hooks/use-editor.ts` — Editor initialization and event handling
+- `builder/[agencyId]/editor/[pageId]/_hooks/use-auto-save.ts` — Auto-save with debounce

@@ -1,14 +1,33 @@
 {
   "extends": "@eduforge/config/typescript",
   "compilerOptions": {
-    "plugins": [{ "name": "next" }],
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
     "paths": {
-      "@/*": ["./src/*"],
-      "@eduforge/types": ["../../packages/types/src/index.ts"],
-      "@eduforge/api-client": ["../../packages/api-client/src/index.ts"],
-      "@eduforge/builder-core": ["../../packages/builder-core/src/index.ts"]
+      "@/*": [
+        "./src/*"
+      ],
+      "@eduforge/types": [
+        "../../packages/types/src/index.ts"
+      ],
+      "@eduforge/api-client": [
+        "../../packages/api-client/src/index.ts"
+      ],
+      "@eduforge/builder-core": [
+        "../../packages/builder-core/src/index.ts"
+      ]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
