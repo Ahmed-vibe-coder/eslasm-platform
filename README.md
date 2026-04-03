@@ -5,7 +5,7 @@ A multi-tenant platform for building and launching online learning academies.
 ## Quick Start 
 
 ### Prerequisites
-- Node.js >= 20
+- Node.js >= 20 
 - pnpm >= 9
 
 ### Install
